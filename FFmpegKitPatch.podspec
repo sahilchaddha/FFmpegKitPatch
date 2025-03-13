@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
-    s.name             = 'FFmpegKit'
+    s.name             = 'FFmpegKitPatch'
     s.version          = '6.1.0'
-    s.summary          = 'FFmpegKit'
+    s.summary          = 'FFmpegKitPatch'
 
     s.description      = <<-DESC
     FFmpeg
@@ -16,10 +16,10 @@ Pod::Spec.new do |s|
     s.osx.deployment_target = '10.15'
     # s.watchos.deployment_target = '2.0'
     s.tvos.deployment_target = '13.0'
-    s.default_subspec = 'FFmpegKit'
+    s.default_subspec = 'FFmpegKitPatch'
     s.static_framework = true
-    s.source_files = 'Sources/FFmpegKit/**/*.{h,c,m}'
-    s.subspec 'FFmpegKit' do |ffmpeg|
+    s.source_files = 'Sources/FFmpegKitPatch/**/*.{h,c,m}'
+    s.subspec 'FFmpegKitPatch' do |ffmpeg|
         ffmpeg.libraries   = 'bz2', 'c++', 'iconv', 'resolv', 'xml2', 'z'
         ffmpeg.osx.libraries = 'expat'
         ffmpeg.frameworks  = 'AudioToolbox', 'AVFoundation', 'CoreMedia', 'VideoToolbox'
@@ -32,4 +32,4 @@ Pod::Spec.new do |s|
         ffmpeg.osx.vendored_frameworks = 'Sources/libbluray.xcframework'
         ffmpeg.dependency 'Libass'
     end
-end
+end 

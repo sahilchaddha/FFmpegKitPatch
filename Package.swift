@@ -2,15 +2,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "FFmpegKit",
+    name: "FFmpegKitPatch",
     defaultLocalization: "en",
     platforms: [.macOS(.v10_15), .macCatalyst(.v14), .iOS(.v13), .tvOS(.v13),
                 .visionOS(.v1)],
     products: [
         .library(
-            name: "FFmpegKit",
+            name: "FFmpegKitPatch",
 //            type: .static,
-            targets: ["FFmpegKit"]
+            targets: ["FFmpegKitPatch"]
         ),
         .library(name: "Libavcodec", targets: ["Libavcodec"]),
         .library(name: "Libavfilter", targets: ["Libavfilter"]),
@@ -19,7 +19,7 @@ let package = Package(
         .library(name: "Libswresample", targets: ["Libswresample"]),
         .library(name: "Libswscale", targets: ["Libswscale"]),
         .library(name: "libass", targets: ["libfreetype", "libfribidi", "libharfbuzz", "libass"]),
-        .library(name: "libmpv", targets: ["FFmpegKit", "libass", "libmpv"]),
+        .library(name: "libmpv", targets: ["FFmpegKitPatch", "libass", "libmpv"]),
         .executable(name: "ffmpeg", targets: ["ffmpeg"]),
         .executable(name: "ffplay", targets: ["ffplay"]),
         .executable(name: "ffprobe", targets: ["ffprobe"]),
@@ -30,7 +30,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "FFmpegKit",
+            name: "FFmpegKitPatch",
             dependencies: [
                 "MoltenVK",
                 "libshaderc_combined",
@@ -96,7 +96,7 @@ let package = Package(
         .target(
             name: "fftools",
             dependencies: [
-                "FFmpegKit",
+                "FFmpegKitPatch",
             ]
         ),
         .systemLibrary(
